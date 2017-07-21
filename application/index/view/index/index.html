@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>知问</title>
@@ -25,7 +25,32 @@
     </div>
 </div>
 <div id="reg">
-
+    <form action="" method="post">
+        <p>
+            <label for="name">账号:</label>
+                <input type="text" class="text" id="name" name="user" title="请输入账号不少于2位！">
+            <span class="star">*</span>
+        </p>
+        <p>
+            <label for="pass">密码:</label>
+              <input type="password" class="text" id="pass" name="password" title="请输入密码不少于3位！">
+            <span class="star">*</span>
+        </p>
+        <p>
+              <label for="email">邮箱:</label>
+              <input type="text" class="text" id="email" name="email" title="请输入正确邮箱！">
+             <span class="star">*</span>
+        </p>
+        <p>
+            <label >性别:</label>
+              <input type="radio" name="sex" value="male" id="sex" checked="checked"> <label for="sex">男</label>
+              <input type="radio"  name="sex" value="female" id="fesex"><label for="fesex">女</label>
+        </p>
+        <p>
+            <label for="bir">生日:</label>
+               <input type="text" class="text" readonly="readonly" id="bir" name="birthday">
+        </p>
+    </form>
 </div>
 <div id="login">
 </div>
