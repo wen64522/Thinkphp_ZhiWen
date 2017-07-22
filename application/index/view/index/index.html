@@ -7,6 +7,7 @@
     <script type="text/javascript" src="static/js/jquery ui/js/jquery-ui-1.9.2.custom.js"></script>
     <script type="text/javascript" src="static/js/jquery.validate.js"></script>
     <script type="text/javascript" src="static/js/index.js"></script>
+    <script type="text/javascript" src="static/js/jquery.form.js"></script>
     <link rel="stylesheet" href="static/js/jquery ui/css/base/jquery-ui-1.9.2.custom.min.css" type="text/css">
     <link rel="stylesheet" href="static/css/style.css" type="text/css">
 </head>
@@ -25,7 +26,7 @@
         </div>
     </div>
 </div>
-    <form id="reg"  action="122.html" method="post">
+    <form id="reg"  action="{:url('Index/add_user')}" method="post">
         <ol class="reg-error"></ol>
         <p>
             <label for="name">账号:</label>
@@ -44,8 +45,8 @@
         </p>
         <p>
             <label >性别:</label>
-              <input type="radio" name="sex" value="male" id="sex" checked="checked"> <label for="sex">男</label>
-              <input type="radio"  name="sex" value="female" id="fesex"><label for="fesex">女</label>
+              <input type="radio" name="sex" value="男" id="sex" checked="checked"> <label for="sex">男</label>
+              <input type="radio"  name="sex" value="女" id="fesex"><label for="fesex">女</label>
         </p>
         <p>
             <label for="bir">生日:</label>
@@ -55,5 +56,6 @@
     </form>
 <div id="login">
 </div>
+<div id="loading">数据交互中....</div>
 </body>
 </html>
