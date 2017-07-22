@@ -5,6 +5,7 @@
     <title>知问</title>
     <script type="text/javascript" src="static/js/jquery ui/js/jquery-1.8.3.js"></script>
     <script type="text/javascript" src="static/js/jquery ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script type="text/javascript" src="static/js/jquery.validate.js"></script>
     <script type="text/javascript" src="static/js/index.js"></script>
     <link rel="stylesheet" href="static/js/jquery ui/css/base/jquery-ui-1.9.2.custom.min.css" type="text/css">
     <link rel="stylesheet" href="static/css/style.css" type="text/css">
@@ -24,21 +25,21 @@
         </div>
     </div>
 </div>
-<div id="reg">
-    <form action="" method="post">
+    <form id="reg"  action="122.html" method="post">
+        <ol class="reg-error"></ol>
         <p>
             <label for="name">账号:</label>
-                <input type="text" class="text" id="name" name="user" title="请输入账号不少于2位！">
+                <input type="text" class="text" id="name" name="user" >
             <span class="star">*</span>
         </p>
         <p>
             <label for="pass">密码:</label>
-              <input type="password" class="text" id="pass" name="password" title="请输入密码不少于3位！">
+              <input type="password" class="text" id="pass" name="password" >
             <span class="star">*</span>
         </p>
         <p>
               <label for="email">邮箱:</label>
-              <input type="text" class="text" id="email" name="email" title="请输入正确邮箱！">
+              <input type="text" class="text" id="email" name="email">
              <span class="star">*</span>
         </p>
         <p>
@@ -49,9 +50,9 @@
         <p>
             <label for="bir">生日:</label>
                <input type="text" class="text" readonly="readonly" id="bir" name="birthday">
+            <span class="star">*</span>
         </p>
     </form>
-</div>
 <div id="login">
 </div>
 </body>
