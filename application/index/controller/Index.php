@@ -21,6 +21,16 @@ class Index extends Controller
         $result=Db::name('user')->insert($data);
         return true;
     }
+    public function login_user(){
+        $data['name']=$_POST['user'];
+        $data['password']=$_POST['password'];
+        $date=Db::name('user')->where($data)->find();
+        if($date){
+            return true;
+        }else{
+            return false;
+        }
+    }
     public  function find_user(){
         $data['name']=$_POST['user'];
         $re=Db::name('user')->where($data)->find();
