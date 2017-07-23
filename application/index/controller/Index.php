@@ -1,8 +1,6 @@
 <?php
 namespace app\index\controller;
-
 use think\Controller;
-
 use think\Db;
 class Index extends Controller
 {
@@ -20,8 +18,16 @@ class Index extends Controller
             'birthday'=>$_POST['birthday'],
             'date'=>$t,
         ];
-        Db::name('user')->insert($data);
-
+        $result=Db::name('user')->insert($data);
         return true;
+    }
+    public  function find_user(){
+        $data['name']=$_POST['user'];
+        $re=Db::name('user')->where($data)->find();
+        if($re){
+            return false;
+        }else{
+            return true;
+        }
     }
 }

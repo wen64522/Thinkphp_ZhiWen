@@ -8,6 +8,7 @@
     <script type="text/javascript" src="static/js/jquery.validate.js"></script>
     <script type="text/javascript" src="static/js/index.js"></script>
     <script type="text/javascript" src="static/js/jquery.form.js"></script>
+    <script type="text/javascript" src="static/js/jquery.cookie.js"></script>
     <link rel="stylesheet" href="static/js/jquery ui/css/base/jquery-ui-1.9.2.custom.min.css" type="text/css">
     <link rel="stylesheet" href="static/css/style.css" type="text/css">
 </head>
@@ -22,11 +23,15 @@
             <button id="sous_bt">搜索</button>
         </div>
         <div class="home">
-            <a id="login_a"  href="###">登录</a>|<a id="reg_b"  href="###">注册</a>
+            <a id="reg_b"  href="javascript:void (0)">注册</a>
+            <a id="member"  href="javascript:void (0)">用户</a>
+            |
+            <a id="login_a"  href="javascript:void (0)">登录</a>
+            <a id="logout"  href="javascript:void (0)">退出</a>
         </div>
     </div>
 </div>
-    <form id="reg"  action="{:url('Index/add_user')}" method="post">
+    <form id="reg"  action="{:url('Index/add_user')}" method="post" title="会员注册">
         <ol class="reg-error"></ol>
         <p>
             <label for="name">账号:</label>
