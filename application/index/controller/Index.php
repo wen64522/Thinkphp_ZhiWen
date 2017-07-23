@@ -19,9 +19,14 @@ class Index extends Controller
             'date'=>$t,
         ];
         $result=Db::name('user')->insert($data);
-        return true;
+        if($result){
+            return true;
+        }else{
+            return false;
+        }
     }
     public function login_user(){
+        sleep(2);
         $data['name']=$_POST['user'];
         $data['password']=$_POST['password'];
         $date=Db::name('user')->where($data)->find();
@@ -39,5 +44,14 @@ class Index extends Controller
         }else{
             return true;
         }
+    }
+    public function index_tb1(){
+        return $this->fetch();
+    }
+    public function index_tb2(){
+        return $this->fetch();
+    }
+    public function index_tb3(){
+        return $this->fetch();
     }
 }

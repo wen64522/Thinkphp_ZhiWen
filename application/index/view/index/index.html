@@ -9,8 +9,10 @@
     <script type="text/javascript" src="static/js/index.js"></script>
     <script type="text/javascript" src="static/js/jquery.form.js"></script>
     <script type="text/javascript" src="static/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="static/uEditor/uEditor.js"></script>
     <link rel="stylesheet" href="static/js/jquery ui/css/base/jquery-ui-1.9.2.custom.min.css" type="text/css">
     <link rel="stylesheet" href="static/css/style.css" type="text/css">
+    <link href="static/uEditor/uEditor.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 <div id="header">
@@ -21,6 +23,7 @@
         </div>
         <div class="sbt">
             <button id="sous_bt">搜索</button>
+            <button id="wenti_bt">提问</button>
         </div>
         <div class="home">
             <a id="reg_b"  href="javascript:void (0)">注册</a>
@@ -31,7 +34,28 @@
         </div>
     </div>
 </div>
-    <form id="reg"  action="{:url('Index/add_user')}" method="post" title="会员注册">
+<div id="main">
+    <div class="main_left">
+        <div id="tabs">
+            <ul>
+                <li><a href="{:url('Index/index_tb1')}">tb1</a></li>
+                <li><a href="{:url('Index/index_tb2')}">tb2</a></li>
+                <li><a href="{:url('Index/index_tb3')}">tb3</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main_right">
+        <div id="nav">
+            <h1>菜单1</h1>
+            <div>内容1</div>
+            <h1>菜单2</h1>
+            <div>内容2</div>
+            <h1>菜单3</h1>
+            <div>内容3</div>
+        </div>
+    </div>
+</div>
+<form id="reg"  action="{:url('Index/add_user')}" method="post" title="会员注册">
         <ol class="reg-error"></ol>
         <p>
             <label for="name">账号:</label>
@@ -59,7 +83,6 @@
             <span class="star">*</span>
         </p>
     </form>
-
 <form id="login"  action="{:url('Index/login_user')}" method="post" title="会员登录">
     <ol class="login-error"></ol>
     <p>
@@ -77,6 +100,17 @@
         <label for="expires">登录后有效期一周</label>
     </p>
 </form>
+<form id="tiwen"  action="{:url('Index/login_user')}" method="post" title="提问">
+    <ol class="login-error"></ol>
+    <p>
+        <label for="q" >问题标题:</label>
+        <input type="text" class="text" id="q" name="biaoti" style="width: 400px">
+    </p>
+    <p>
+        <textarea id="w" name="content" class="uEditorCustom">请输入你要提问的内容！</textarea>
+    </p>
+</form>
 <div id="loading">数据交互中....</div>
+<div id="error">请登陆后操作....</div>
 </body>
 </html>
