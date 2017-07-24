@@ -2,6 +2,7 @@
 namespace app\index\controller;
 use think\Controller;
 use think\Db;
+use think\Cookie;
 class Index extends Controller
 {
     public function index()
@@ -43,6 +44,19 @@ class Index extends Controller
             return false;
         }else{
             return true;
+        }
+    }
+    public function tiwen_user(){
+        sleep(2);
+        $data['biaoti']=$_POST['biaoti'];
+        $data['content']=$_POST['content'];
+        $data['date']=time();
+        $data['user']=Cookie::get('user');
+        $re=Db::name('question')->insert($data);
+        if($re){
+            return true;
+        }else{
+            return false;
         }
     }
     public function index_tb1(){

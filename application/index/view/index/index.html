@@ -100,14 +100,15 @@
         <label for="expires">登录后有效期一周</label>
     </p>
 </form>
-<form id="tiwen"  action="{:url('Index/login_user')}" method="post" title="提问">
-    <ol class="login-error"></ol>
+<form id="tiwen"  action="{:url('Index/tiwen_user')}" method="post" title="提问">
+    <ol class="tiwen-error"></ol>
     <p>
         <label for="q" >问题标题:</label>
-        <input type="text" class="text" id="q" name="biaoti" style="width: 400px">
+        <input type="text" class="text" id="q" name="biaoti" style="width: 350px">
+        <span class="star">*</span>
     </p>
     <p>
-        <textarea id="w" name="content" class="uEditorCustom">请输入你要提问的内容！</textarea>
+        <textarea id="w" name="content" class="uEditorCustom"></textarea>
     </p>
 </form>
 <div id="loading">数据交互中....</div>
