@@ -59,6 +59,11 @@ class Index extends Controller
             return false;
         }
     }
+    public function find_question(){
+        $db= Db::name('question')->select();
+        $json=json_encode($db);
+        return substr($json,0,strlen($json)-1).']';
+    }
     public function index_tb1(){
         return $this->fetch();
     }
