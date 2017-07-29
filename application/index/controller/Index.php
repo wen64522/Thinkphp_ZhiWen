@@ -10,7 +10,7 @@ class Index extends Controller
         return $this->fetch();
     }
     public function add_user(){
-        sleep(2);
+        sleep(1);
         $t=time();
         $data= [
             'name'=>$_POST['user'],
@@ -27,7 +27,7 @@ class Index extends Controller
         }
     }
     public function login_user(){
-        sleep(2);
+        sleep(1);
         $data['name']=$_POST['user'];
         $data['password']=$_POST['password'];
         $date=Db::name('user')->where($data)->find();
@@ -47,7 +47,7 @@ class Index extends Controller
         }
     }
     public function tiwen_user(){
-        sleep(2);
+        sleep(1);
         $data['biaoti']=$_POST['biaoti'];
         $data['content']=$_POST['content'];
         $data['date']=time();
@@ -63,6 +63,26 @@ class Index extends Controller
         $db= Db::name('question')->select();
         $json=json_encode($db);
         return substr($json,0,strlen($json)-1).']';
+    }
+
+    public function show_comment(){
+        $data=$_POST['titleid'];
+        $db=Db::name('comment')->where('titleid',$data)->paginate(2)->toJson();
+        return json($db);
+    }
+
+    public function add_comment(){
+        sleep(1);
+        $data['titleid']=$_POST['titleid'];
+        $data['comment']=$_POST['comment'];
+        $data['date']=time();
+        $data['user']=Cookie::get('user');
+        $re=Db::name('comment')->insert($data);
+        if($re){
+            return true;
+        }else{
+            return false;
+        }
     }
     public function index_tb1(){
         return $this->fetch();
